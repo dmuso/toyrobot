@@ -8,7 +8,7 @@ else
   Cane::RakeTask.new(:cane) do |cane|
     cane.abc_max       = 15
     cane.no_doc        = true
-    cane.style_glob    = './{app,lib}/**/*.rb'
+    cane.style_glob    = './{app}/**/*.rb'
     cane.style_measure = 120
 
     cane.abc_exclude   = []
@@ -21,16 +21,10 @@ rescue LoadError
   puts 'RuboCop gem is unavailable'
 else
   desc 'Run RuboCop, stay out of trouble.'
-  RuboCop::RakeTask.new(:rubocop) do |task|
-    task.patterns = ['app/**/*.rb']
-    # only show the files with failures
-    task.formatters = ['files']
-    # don't abort rake on failure
-    task.fail_on_error = true
-  end
+  RuboCop::RakeTask.new(:rubocop)
 end
 
 task :quality do
-  Rake::Task["cane"].invoke
-  Rake::Task["rubocop"].invoke
+  Rake::Task['cane'].invoke
+  Rake::Task['rubocop'].invoke
 end
