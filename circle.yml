@@ -1,0 +1,19 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  post:
+    - docker info
+    - docker build -t dmuso/toyrobot-2016 .
+
+test:
+  override:
+    - docker run -e ROBOT_ENV=test dmuso/toyrobot-2016 bundle exec rake
+
+deployment:
+  hub:
+    branch: master
+    commands:
+      - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
+      - docker push dmuso/toyrobot-2016
