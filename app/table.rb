@@ -1,17 +1,9 @@
 # The Table that the Robot can cruise around on
 class Table
-  def initialize
-  end
+  attr_accessor :width, :height
 
-  def whoami
-    'A Table!'
-  end
-
-  def width
-    5
-  end
-
-  def height
-    5
+  def initialize(width, height)
+    @width = width
+    @height = height
   end
 end
