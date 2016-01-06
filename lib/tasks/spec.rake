@@ -5,5 +5,5 @@ begin
 
   task :default => :spec
 rescue LoadError
-  # no rspec available
+  puts 'RSpec gem is unavailable'
 end
