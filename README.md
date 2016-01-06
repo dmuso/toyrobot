@@ -1,3 +1,5 @@
+[![Build Status](https://circleci.com/gh/dmuso/toyrobot-2016.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/dmuso/toyrobot-2016)
+
 # Toy Robot Simulator Challenge
 
 ## Running the Robot
@@ -43,7 +45,11 @@ This implementation of the Toy Robot includes the ability to run the solution vi
 
     rspec
 
-## Description
+## Build History
+
+This project is integrated with CircleCI. Build history is publicly available at: https://circleci.com/gh/dmuso/toyrobot-2016
+
+## Problem Description
 
 * The application is a simulation of a toy robot moving on a square tabletop, of dimensions 5 units x 5 units
 * There are no other obstructions on the table surface
