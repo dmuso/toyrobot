@@ -66,4 +66,12 @@ describe Robot do
       expect(robot.direction.to_sym).to eq(:west)
     end
   end
+
+  describe '#turn_right' do
+    it 'from west it turns to face north' do
+      robot.place(Position.new(0, 0), Direction.new(:west))
+      robot.turn_right
+      expect(robot.direction.to_sym).to eq(:north)
+    end
+  end
 end

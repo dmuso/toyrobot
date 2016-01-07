@@ -30,6 +30,10 @@ class Robot
     @direction = @direction.left
   end
 
+  def turn_right
+    @direction = @direction.right
+  end
+
   private
 
   def move_based_on_direction(current_position, direction)

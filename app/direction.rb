@@ -10,8 +10,8 @@ class Direction
     if DIRECTIONS.include?(name)
       @name = name
     else
-      fail(InvalidDirection, "Direction '#{name}' invalid,
-        valid directions must be one of #{DIRECTIONS}.")
+      fail(InvalidDirection, "Direction '#{name}' invalid, \
+valid directions must be one of #{DIRECTIONS}.")
     end
   end
 
@@ -21,5 +21,11 @@ class Direction
 
   def left
     Direction.new(DIRECTIONS[DIRECTIONS.index(@name) - 1])
+  end
+
+  def right
+    index = DIRECTIONS.index(@name) + 1
+    index = 0 if index >= DIRECTIONS.length - 1
+    Direction.new(DIRECTIONS[index])
   end
 end
