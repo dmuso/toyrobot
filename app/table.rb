@@ -7,7 +7,8 @@ class Table
     @height = height
   end
 
-  def coordinates_valid?(x, y)
-    x >= 0 && x <= @width - 1 && y >= 0 && y <= @height - 1
+  def position_valid?(position)
+    position.x >= 0 && position.x <= @width - 1 &&
+      position.y >= 0 && position.y <= @height - 1
   end
 end
