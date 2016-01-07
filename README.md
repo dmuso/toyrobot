@@ -8,19 +8,22 @@
 
 This implementation of the Toy Robot includes the ability to run the solution via Docker and Docker Compose. Tested with: `Docker version 1.8.1, build d12ea79` and `docker-compose version: 1.4.0`.
 
-#### Running the Robot Application
+#### Building the Docker image
+
+Before the Docker Compose commands below are used, you'll need to build the Docker image first with:
 
     docker-compose build
+
+#### Running the Robot Application
+
     docker-compose run app
 
 #### Running the Test Suite (RSpec, Cane/SimpleCov, RuboCop)
 
-    docker-compose build
     docker-compose run test
 
 #### Running RSpec
 
-    docker-compose build
     docker-compose run rspec
 
 ### Without Docker
@@ -44,6 +47,10 @@ This implementation of the Toy Robot includes the ability to run the solution vi
 #### Running RSpec
 
     rspec
+
+## Test Data
+
+Test data can be found in `spec/fixtures`. These commands can be used as examples and entered into the interactive app manually.
 
 ## Build History
 
@@ -88,23 +95,23 @@ The toy robot must not fall off the table during movement. This also includes th
 
 ## Example Input/Output
 
-a) PLACE 0,0,NORTH
-MOVE
-REPORT
-**Output:** 0,1,NORTH
+    a) PLACE 0,0,NORTH
+    MOVE
+    REPORT
+    Output: 0,1,NORTH
 
-b) PLACE 0,0,NORTH
-LEFT
-REPORT
-**Output:** 0,0,WEST
+    b) PLACE 0,0,NORTH
+    LEFT
+    REPORT
+    Output: 0,0,WEST
 
-c) PLACE 1,2,EAST
-MOVE
-MOVE
-LEFT
-MOVE
-REPORT
-**Output:** 3,3,NORTH
+    c) PLACE 1,2,EAST
+    MOVE
+    MOVE
+    LEFT
+    MOVE
+    REPORT
+    Output: 3,3,NORTH
 
 ## Deliverables
 
