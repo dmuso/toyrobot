@@ -5,6 +5,7 @@ GEM
     astrolabe (1.3.1)
       parser (~> 2.2)
     builder (3.2.2)
+    byebug (8.2.1)
     cane (2.6.2)
       parallel
     coderay (1.1.0)
@@ -20,6 +21,9 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.3.0)
+      byebug (~> 8.0)
+      pry (~> 0.10)
     rainbow (2.0.0)
     rspec (3.4.0)
       rspec-core (~> 3.4.0)
@@ -58,7 +62,7 @@ PLATFORMS
 
 DEPENDENCIES
   cane
-  pry
+  pry-byebug
   rspec
   rspec_junit_formatter
   rubocop

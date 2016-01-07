@@ -4,7 +4,7 @@ class Direction
 
   attr_accessor :name
 
-  DIRECTIONS = [:north, :south, :east, :west]
+  DIRECTIONS = [:north, :east, :south, :west]
 
   def initialize(name)
     if DIRECTIONS.include?(name)

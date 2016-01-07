@@ -25,6 +25,6 @@ else
 end
 
 task :quality do
-  Rake::Task['cane'].invoke
   Rake::Task['rubocop'].invoke
+  Rake::Task['cane'].invoke
 end
