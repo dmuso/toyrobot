@@ -19,6 +19,10 @@ valid directions must be one of #{DIRECTIONS}.")
     @name
   end
 
+  def to_s
+    @name.to_s
+  end
+
   def left
     Direction.new(DIRECTIONS[DIRECTIONS.index(@name) - 1])
   end

@@ -74,4 +74,11 @@ describe Robot do
       expect(robot.direction.to_sym).to eq(:north)
     end
   end
+
+  describe '#report' do
+    it 'reports the current position and direction' do
+      robot.place(Position.new(0, 0), Direction.new(:west))
+      expect(robot.report).to eq('0,0,WEST')
+    end
+  end
 end

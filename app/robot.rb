@@ -34,6 +34,10 @@ class Robot
     @direction = @direction.right
   end
 
+  def report
+    "#{@position.x},#{@position.y},#{@direction.to_s.upcase}"
+  end
+
   private
 
   def move_based_on_direction(current_position, direction)
