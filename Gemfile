@@ -6,4 +6,5 @@ group :development, :test do
   gem 'rubocop'
   gem 'rspec'
   gem 'rspec_junit_formatter'
+  gem 'pry'
 end
