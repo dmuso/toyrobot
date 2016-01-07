@@ -50,7 +50,7 @@ describe Robot do
     end
 
     context 'when invalid' do
-      it 'do not move if move is invalid' do
+      it 'does not move' do
         robot.place(Position.new(0, 0), Direction.new(:south))
         expect(robot.move).to eq(false)
         expect(robot.position.x).to eq(0)

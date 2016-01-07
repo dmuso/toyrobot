@@ -8,9 +8,7 @@ describe Direction do
     end
 
     it 'raises an error when direction argument is invalid' do
-      expect do
-        Direction.new(:invalid)
-      end.to raise_error(Direction::InvalidDirection)
+      expect { Direction.new(:invalid) }.to raise_error(Direction::InvalidDirection)
     end
   end
 

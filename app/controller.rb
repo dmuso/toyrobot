@@ -1,5 +1,12 @@
-# Control a robot from a file or command line
+require_relative 'robot'
+require_relative 'table'
+require_relative 'position'
+require_relative 'direction'
+
+# Control a robot to do your bidding
 class Controller
+  class InvalidCommand < ArgumentError; end
+
   attr_accessor :robot
 
   def initialize
@@ -13,6 +20,9 @@ class Controller
     when 'MOVE'  then @robot.move
     when 'LEFT'  then @robot.turn_left
     when 'RIGHT' then @robot.turn_right
+    when 'REPORT'
+    else
+      fail(InvalidCommand, 'Invalid robot command.')
     end
   end
 
@@ -29,5 +39,7 @@ class Controller
       Position.new(args[0].to_i, args[1].to_i),
       Direction.new(args[2].downcase.to_sym)
     ]
+  rescue
+    raise(InvalidCommand, 'Invalid arguments given to PLACE command.')
   end
 end

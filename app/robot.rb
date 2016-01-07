@@ -1,15 +1,19 @@
 # Represents a Toy Robot
 class Robot
+  class RobotNotPlaced < StandardError; end
+
   attr_accessor :table, :position, :direction
 
   def initialize(table)
     @table = table
+    @placed = false
   end
 
   def place(position, direction)
     if table.position_valid?(position)
       @position = position
       @direction = direction
+      @placed = true
       true
     else
       false
@@ -17,6 +21,7 @@ class Robot
   end
 
   def move
+    fail(RobotNotPlaced, 'Your robot has not been placed yet') unless placed?
     new_position = move_based_on_direction(@position, @direction)
     if table.position_valid?(new_position)
       @position = new_position
@@ -27,15 +32,22 @@ class Robot
   end
 
   def turn_left
+    fail(RobotNotPlaced, 'Your robot has not been placed yet') unless placed?
     @direction = @direction.left
   end
 
   def turn_right
+    fail(RobotNotPlaced, 'Your robot has not been placed yet') unless placed?
     @direction = @direction.right
   end
 
   def report
+    fail(RobotNotPlaced, 'Your robot has not been placed yet') unless placed?
     "#{@position.x},#{@position.y},#{@direction.to_s.upcase}"
+  end
+
+  def placed?
+    @placed == true
   end
 
   private
