@@ -1,8 +1,5 @@
 source 'https://rubygems.org/'
 
-gem 'highline'
-gem 'cli-console'
-
 group :development, :test do
   gem 'simplecov'
   gem 'cane'
