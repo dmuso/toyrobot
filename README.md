@@ -32,9 +32,9 @@ Before the Docker Compose commands below are used, you'll need to build the Dock
 
 * Linux or Mac OS X
 * bash
-* ruby - v2.2.3
-* bundler - v1.11.x
-* rake - v10.4.x
+* ruby - v2.5.3
+* bundler - v1.17.x
+* rake - v12.3.x
 
 #### Running the Robot Application
 
@@ -54,7 +54,7 @@ Test data can be found in `spec/fixtures`. These commands can be used as example
 
 ## Build History
 
-This project is integrated with CircleCI. Build history is publicly available at: https://circleci.com/gh/dmuso/toyrobot-2016
+This project is integrated with CircleCI. Build history is publicly available at: https://circleci.com/gh/dmuso/toyrobot
 
 ## Problem Description
 
