@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ENV['ROBOT_ENV'] = 'test'
 require 'simplecov'
 SimpleCov.start do

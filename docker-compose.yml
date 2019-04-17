@@ -1,33 +1,24 @@
----
-base:
-  build: .
-  volumes:
-    - ".:/app"
-  environment:
-    ROBOT_ENV: development
+version: '3.4'
 
-basetest:
-  build: .
-  volumes:
-    - ".:/app"
-  environment:
-    ROBOT_ENV: test
+services:
+  app:
+    build: .
+    volumes:
+      - ".:/app"
+    command: ./bin/run
 
+  test:
+    build: .
+    volumes:
+      - ".:/app"
+    environment:
+      APP_ENV: test
+    entrypoint: ['bundle', 'exec', 'rake']
 
-app:
-  extends:
-    file: docker-compose.yml
-    service: base
-  command: ./bin/run
-
-test:
-  extends:
-    file: docker-compose.yml
-    service: basetest
-  entrypoint: ['bundle', 'exec', 'rake']
-
-rspec:
-  extends:
-    file: docker-compose.yml
-    service: basetest
-  entrypoint: ['bundle', 'exec', 'rspec']
+  rspec:
+    build: .
+    volumes:
+      - ".:/app"
+    environment:
+      APP_ENV: test
+    entrypoint: ['bundle', 'exec', 'rspec']

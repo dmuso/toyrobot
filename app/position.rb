@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Co-ordinate position for a robot on a table
 class Position
   attr_accessor :x, :y

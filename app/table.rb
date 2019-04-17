@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # The Table that the Robot can cruise around on
 class Table
   attr_accessor :width, :height

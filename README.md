@@ -1,4 +1,4 @@
-[![Build Status](https://circleci.com/gh/dmuso/toyrobot-2016.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/dmuso/toyrobot-2016)
+[![Build Status](https://circleci.com/gh/dmuso/toyrobot.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/dmuso/toyrobot)
 
 # Toy Robot Simulator Challenge
 
@@ -6,7 +6,7 @@
 
 ### Using Docker
 
-This implementation of the Toy Robot includes the ability to run the solution via Docker and Docker Compose. Tested with: `Docker version 1.8.1, build d12ea79` and `docker-compose version: 1.4.0`.
+This implementation of the Toy Robot includes the ability to run the solution via Docker and Docker Compose. Tested with: `Docker v18.09.0` and `docker-compose v1.23.1`.
 
 #### Building the Docker image
 

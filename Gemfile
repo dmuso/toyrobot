@@ -1,10 +1,16 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org/'
 
+ruby '2.5.3'
+
+gem 'rake'
+
 group :development, :test do
-  gem 'simplecov'
   gem 'cane'
-  gem 'rubocop'
+  gem 'pry-byebug'
   gem 'rspec'
   gem 'rspec_junit_formatter'
-  gem 'pry-byebug'
+  gem 'rubocop'
+  gem 'simplecov'
 end

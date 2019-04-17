@@ -1,17 +1,19 @@
+# frozen_string_literal: true
+
 # Directions that a robot can face
 class Direction
   class InvalidDirection < ArgumentError; end
 
   attr_accessor :name
 
-  DIRECTIONS = [:north, :east, :south, :west]
+  DIRECTIONS = %i[north east south west].freeze
 
   def initialize(name)
     if DIRECTIONS.include?(name)
       @name = name
     else
-      fail(InvalidDirection, "Direction '#{name}' invalid, \
-valid directions must be one of #{DIRECTIONS}.")
+      raise InvalidDirection, "Direction '#{name}' invalid, \
+valid directions must be one of #{DIRECTIONS}."
     end
   end
 

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Represents a Toy Robot
 class Robot
   class RobotNotPlaced < StandardError; end
@@ -21,7 +23,8 @@ class Robot
   end
 
   def move
-    fail(RobotNotPlaced, 'Your robot has not been placed yet') unless placed?
+    raise RobotNotPlaced, 'Your robot has not been placed yet' unless placed?
+
     new_position = move_based_on_direction(@position, @direction)
     if table.position_valid?(new_position)
       @position = new_position
@@ -32,17 +35,20 @@ class Robot
   end
 
   def turn_left
-    fail(RobotNotPlaced, 'Your robot has not been placed yet') unless placed?
+    raise RobotNotPlaced, 'Your robot has not been placed yet' unless placed?
+
     @direction = @direction.left
   end
 
   def turn_right
-    fail(RobotNotPlaced, 'Your robot has not been placed yet') unless placed?
+    raise RobotNotPlaced, 'Your robot has not been placed yet' unless placed?
+
     @direction = @direction.right
   end
 
   def report
-    fail(RobotNotPlaced, 'Your robot has not been placed yet') unless placed?
+    raise RobotNotPlaced, 'Your robot has not been placed yet' unless placed?
+
     "#{@position.x},#{@position.y},#{@direction.to_s.upcase}"
   end
 
@@ -53,7 +59,7 @@ class Robot
   private
 
   def move_based_on_direction(current_position, direction)
-    if [:north, :south].include?(direction.to_sym)
+    if %i[north south].include?(direction.to_sym)
       move_y(current_position, direction)
     else
       move_x(current_position, direction)

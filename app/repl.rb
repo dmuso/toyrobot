@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'controller'
 
 # Control your robot with an interactive console!
